@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/filipecsoares/api-node/issues"
   },
-  "homepage": "https://github.com/filipecsoares/api-node#readme"
+  "homepage": "https://github.com/filipecsoares/api-node#readme",
+  "devDependencies": {
+    "standard": "^14.3.1"
+  }
 }
