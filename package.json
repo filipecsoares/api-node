@@ -4,7 +4,7 @@
   "description": "API em NodeJs com TDD e Clean Architecture",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "lint-staged": {
     "*.js": [
@@ -30,6 +30,7 @@
   "homepage": "https://github.com/filipecsoares/api-node#readme",
   "devDependencies": {
     "husky": "^4.2.0",
+    "jest": "^25.1.0",
     "lint-staged": "^10.0.2",
     "standard": "^14.3.1"
   }
