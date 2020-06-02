@@ -3,7 +3,7 @@ const AuthUseCase = require('./auth-usecase')
 
 const makeEncrypter = () => {
   class EncrypterSpy {
-    async compare(password, hashedPassword) {
+    async compare (password, hashedPassword) {
       this.password = password
       this.hashedPassword = hashedPassword
       return this.isValid
@@ -17,7 +17,7 @@ const makeEncrypter = () => {
 
 const makeTokenGenerator = () => {
   class TokenGeneratorSpy {
-    async generate(userId) {
+    async generate (userId) {
       this.userId = userId
       return this.accessToken
     }
@@ -30,7 +30,7 @@ const makeTokenGenerator = () => {
 
 const makeLoadUserByEmailRepository = () => {
   class LoadUserByEmailRepositorySpy {
-    async load(email) {
+    async load (email) {
       this.email = email
       return this.user
     }
@@ -47,13 +47,13 @@ const makeSut = () => {
   const encrypterSpy = makeEncrypter()
   const loadUserByEmailRepositorySpy = makeLoadUserByEmailRepository()
   const tokenGeneratorSpy = makeTokenGenerator()
-    const sut = new AuthUseCase(loadUserByEmailRepositorySpy, encrypterSpy, tokenGeneratorSpy)
-    return {
-      sut,
-      loadUserByEmailRepositorySpy,
-      encrypterSpy,
-      tokenGeneratorSpy
-    }
+  const sut = new AuthUseCase(loadUserByEmailRepositorySpy, encrypterSpy, tokenGeneratorSpy)
+  return {
+    sut,
+    loadUserByEmailRepositorySpy,
+    encrypterSpy,
+    tokenGeneratorSpy
+  }
 }
 
 describe('Auth UseCase', () => {
